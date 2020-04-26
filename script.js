@@ -261,7 +261,7 @@ console.log(person3.getFullName());
 
 // Object oriented JavaScript - post ES6
 
-// Class
+// Class - syntacitc sugar, still using the pre-ES6 stuff in the background ¯\_(ツ)_/¯
 class Person2 {
     constructor(firstName, lastName, dob) {
         this.firstName = firstName;
