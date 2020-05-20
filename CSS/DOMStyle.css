@@ -1,0 +1,64 @@
+.hidden {
+    display: none;
+}
+
+.fade-out {
+    animation: fadeOut ease 0.5s;
+}
+
+@keyframes fadeOut {
+    0% {
+        opacity: 1;
+    }
+    100% {
+        opacity: 0;
+    }
+}
+
+.remove-item-x {
+    color: rgb(117, 117, 117);
+    line-height: inherit!important;
+}
+
+.remove-item-x:hover {
+    color: rgb(124, 50, 50);
+    cursor: pointer;
+}
+
+.edit-item {
+    color: rgb(117, 117, 117);
+    padding-left: 1rem;
+    line-height: inherit!important;
+}
+
+.edit-item:hover {
+    color: rgb(68, 78, 122);
+    cursor: pointer;
+}
+
+.edit-item-input {
+    width: 97%;
+    display: inline-block;
+}
+
+@media only screen and (max-width: 992px) {
+    .edit-item-input {
+        width: 94%;
+    }
+}
+
+@media only screen and (max-width: 450px) {
+    .edit-item-input {
+        width: 90%;
+    }
+}
+
+.save-item {
+    color: rgb(117, 117, 117);
+    line-height: 2.3!important;
+}
+
+.save-item:hover {
+    color: rgb(53, 109, 51);
+    cursor: pointer;
+}
