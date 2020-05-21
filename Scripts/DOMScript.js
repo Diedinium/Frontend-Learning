@@ -42,14 +42,24 @@ editItems.forEach(item => item.addEventListener('click', onItemEdit));
 
 function onItemSubmit(e) {
     e.preventDefault();
+    let headerInput = document.querySelector('#itemHeaderInput');
     let itemInput = document.querySelector('#itemInput');
 
-    if (itemInput.value !== '') {
+    if (headerInput.value !== '') {
         let newListItem = document.createElement('li');
+        let newListItemHeader = document.createElement('h4');
+        let newListItemParagraph = document.createElement('p');
+
+        newListItemHeader.innerText = headerInput.value;
+        newListItemParagraph.innerText = itemInput.value;
 
         newListItem.innerHTML = '<i class="float-right fas fa-trash remove-item-x"></i><i class="float-right pr-3 fas fa-edit edit-item"></i>';
-        newListItem.appendChild(document.createTextNode(`${itemInput.value}`));
+        newListItem.appendChild(newListItemHeader);
         newListItem.classList.add('list-group-item');
+        newListItemParagraph.classList.add('mb-0');
+        if (itemInput.value !== '') {
+            newListItem.appendChild(newListItemParagraph);
+        }
 
         let createdRemove = newListItem.querySelector('.remove-item-x');
         let createdEdit = newListItem.querySelector('.edit-item');
@@ -60,7 +70,7 @@ function onItemSubmit(e) {
         itemInput.value = '';
     }
     else {
-        displayError('You must enter a value in order to add item to the list.');
+        displayError('You must at least enter a header to add the item to the form.');
     }
 }
 
@@ -68,17 +78,24 @@ function onItemEdit(e) {
     // e.preventDefault();
     // e.stopPropagation();
     let parentElement = e.currentTarget.parentNode;
-    let currentValue = parentElement.innerText;
-    parentElement.innerHTML = '<div><input type="text" class="form-control edit-item-input"><i class="float-right fas fa-save save-item"></i><div>';
-    
-    let editTextBox = parentElement.querySelector('input');
-    editTextBox.value = currentValue;
-    
+
+    let currentHeaderValue = parentElement.querySelector('h4').innerText;
+    let currentParagraphValue = '';
+    if(parentElement.querySelector('p') !== null) {
+        currentParagraphValue = parentElement.querySelector('p').innerText;
+    }
+
+    parentElement.innerHTML = '<i class="float-right fas fa-save save-item"></i><div class="row margin-override"><input type="text" placeholder="Header" class="form-control col-10 col-sm-11 mb-1"><textarea rows="3" placeholder="Description" class="form-control col-12"></textarea></div><small class="text-muted form-text">Tip: Press Tab and Shift + Tab to move between the input boxes. You can also press enter while the cursor is in the header to complete an edit.</small>';
+
+    let headerTextBox = parentElement.querySelector('input');
+    let DescriptionTextBox = parentElement.querySelector('textarea');
+    headerTextBox.value = currentHeaderValue;
+    DescriptionTextBox.value = currentParagraphValue;
 
     let saveButton = parentElement.querySelector('.save-item');
     saveButton.addEventListener('click', onItemSave);
-    editTextBox.addEventListener('keypress', function(e) {
-        if(e.key === 'Enter') {
+    headerTextBox.addEventListener('keypress', function (e) {
+        if (e.key === 'Enter') {
             parentElement.querySelector('.save-item').click();
         }
     });
@@ -86,11 +103,24 @@ function onItemEdit(e) {
 
 function onItemSave(e) {
     // e.stopPropagation();
-    let parentElement = e.currentTarget.parentNode.parentNode;
-    let currentValue = parentElement.querySelector('input').value;
-    if(currentValue !== '') {
+    let parentElement = e.currentTarget.parentNode;
+    let currentHeaderValue = parentElement.querySelector('input').value;
+    let currentParagraphValue = parentElement.querySelector('textarea').value;
+
+    if (currentHeaderValue !== '') {
+        let newListItemHeader = document.createElement('h4');
+        let newListItemParagraph = document.createElement('p');
+
+        newListItemHeader.innerText = currentHeaderValue;
+        newListItemParagraph.innerText = currentParagraphValue;
+
         parentElement.innerHTML = '<i class="float-right fas fa-trash remove-item-x"></i><i class="float-right pr-3 fas fa-edit edit-item"></i>';
-        parentElement.appendChild(document.createTextNode(`${currentValue}`));
+        parentElement.appendChild(newListItemHeader);
+        parentElement.classList.add('list-group-item');
+        newListItemParagraph.classList.add('mb-0');
+        if (currentParagraphValue.value !== '') {
+            parentElement.appendChild(newListItemParagraph);
+        }
 
         let createdRemove = parentElement.querySelector('.remove-item-x');
         let createdEdit = parentElement.querySelector('.edit-item');
@@ -98,7 +128,7 @@ function onItemSave(e) {
         createdEdit.addEventListener('click', onItemEdit);
     }
     else {
-        displayError('There must be some text in order to save. If you wish to delete this item, please use the delete button instead.')
+        displayError('There must be some text in the header box in order to save.');
     }
 }
 
@@ -108,7 +138,7 @@ function onItemRemoveClick(e) {
 }
 
 function fadeElement(passElement, delayBeforeRemove, fadeOutTime) {
-    if(typeof delayBeforeRemove !== 'undefined' && typeof fadeOutTime !== 'undefined') {
+    if (typeof delayBeforeRemove !== 'undefined' && typeof fadeOutTime !== 'undefined') {
         setTimeout(() => {
             passElement.classList.add('fade-out');
             setTimeout(() => {
@@ -127,7 +157,7 @@ function fadeElement(passElement, delayBeforeRemove, fadeOutTime) {
     }
 }
 
-function displayError(errorMsg,) {
+function displayError(errorMsg, ) {
     let errorMessage = document.querySelector('#errorMessage');
 
     errorMessage.innerHTML = errorMsg;

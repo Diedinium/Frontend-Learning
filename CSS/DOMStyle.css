@@ -45,20 +45,47 @@
     .edit-item-input {
         width: 94%;
     }
+
+    body .save-item {
+        right: 3%;
+    }
+}
+
+@media only screen and (max-width: 768px) {
+    body .save-item {
+        right: 4%;
+    }
 }
 
 @media only screen and (max-width: 450px) {
     .edit-item-input {
         width: 90%;
     }
+
+    body .save-item {
+        right: 5.5%;
+    }
+}
+
+@media only screen and (max-width: 375px) {
+    body .save-item {
+        right: 6.5%;
+    }
 }
 
 .save-item {
     color: rgb(117, 117, 117);
     line-height: 2.3!important;
+    position: absolute;
+    top: 7%;
+    right: 1.9%;
 }
 
 .save-item:hover {
     color: rgb(53, 109, 51);
     cursor: pointer;
+}
+
+.margin-override {
+    margin: auto;
 }
