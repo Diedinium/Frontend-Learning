@@ -73,6 +73,7 @@ function onSubmit(e) {
     else {
         let li = document.createElement('li');
         li.appendChild(document.createTextNode(`${name.value} : ${email.value}`));
+        li.classList.add('rounded', 'subtle-shadow');
         ul.appendChild(li);
         name.value = '';
         email.value = '';

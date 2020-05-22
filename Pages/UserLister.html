@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+  <title>JS - Login Form</title>
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css"
+    integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
+  <link rel="stylesheet" href="../CSS/all.css">
+  <link rel="stylesheet" href="../CSS/site.css">
+  <link rel="stylesheet" href="../CSS/UserLister.css">
+</head>
+
+<body>
+  <nav class="navbar navbar-expand navbar-light bg-light subtle-shadow">
+    <div class="container">
+      <div class="nav navbar-nav">
+        <a class="nav-item nav-link btn btn-light" href="../index.html">Home <span class="sr-only">(current)</span></a>
+      </div>
+      <a class="float-right" href="https://github.com/Diedinium"><i class="fab fa-github fa-2x text-dark"></i></a>
+    </div>
+  </nav>
+
+  <section class="container">
+    <div class="row">
+      <div class="col-8 m-auto">
+        <form class="rounded subtle-shadow mt-2" id="my-form">
+          <h1>Add User</h1>
+          <div class="msg"></div>
+          <div class="form-group">
+            <label class="form-text" for="name">Name:</label>
+            <input class="form-control" type="text" id="name">
+          </div>
+          <div class="form-group">
+            <label class="form-text" for="email">Email:</label>
+            <input class="form-control" type="text" id="email">
+          </div>
+          <input class="btn btn-primary" type="submit" value="Submit">
+        </form>
+      </div>
+    </div>
+
+    <div class="row mt-3">
+      <div class="col-8 m-auto">
+        <ul id="users"></ul>
+      </div>
+    </div>
+    
+
+    <!-- <ul class="items">
+        <li class="item">Item 1</li>
+        <li class="item">Item 2</li>
+        <li class="item">Item 3</li>
+      </ul> -->
+  </section>
+
+  <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
+    integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj"
+    crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"
+    integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo"
+    crossorigin="anonymous"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"
+    integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI"
+    crossorigin="anonymous"></script>
+  <script src="../Scripts/UserLister.js"></script>
+</body>
+
+</html>

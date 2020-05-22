@@ -5,41 +5,130 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <meta http-equiv="X-UA-Compatible" content="ie=edge" />
-  <title>JS For Beginners</title>
-  <link rel="stylesheet" href="CSS/style.css">
+  <title>JS - Home</title>
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css"
+    integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
+  <link rel="stylesheet" href="CSS/all.css">
+  <link rel="stylesheet" href="CSS/site.css">
 </head>
 
-<body>
-  <header>
-    <h1>JS For Beginners</h1>
-  </header>
-
-  <section class="container">
-    <form id="my-form">
-      <h1>Add User</h1>
-      <div class="msg"></div>
-      <div>
-        <label for="name">Name:</label>
-        <input type="text" id="name">
+<body class="bg-very-dark">
+  <nav class="navbar navbar-expand-lg navbar-dark bg-dark subtle-shadow">
+    <div class="container">
+      <a class="navbar-brand" href="#">JS Learning</a>
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#collapsibleNavId"
+        aria-controls="collapsibleNavId" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="collapsibleNavId">
+        <ul class="navbar-nav mr-auto mt-2 mt-lg-0">
+          <li class="nav-item active mr-1">
+            <a class="nav-link btn btn-dark" href="#">Home <span class="sr-only">(current)</span></a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link btn btn-dark" href="/Pages/About.html">About</a>
+          </li>
+        </ul>
+        <a href="https://github.com/Diedinium" class="text-white"><i class="fab fa-github fa-2x"></i></a>
       </div>
-      <div>
-        <label for="email">Email:</label>
-        <input type="text" id="email">
+    </div>
+  </nav>
+  <div class="container">
+    <div class="row">
+      <div class="col-12 text-white">
+        <div class="mt-2 bg-dark rounded subtle-shadow px-35 pt-3 pb-2">
+          <h3>Progress Guide</h3>
+          <p class="mb-2"><i class="fas fa-square" style="color: green;"></i> - Completed project</p>
+          <p class="mb-2"><i class="fas fa-square" style="color: orange;"></i> - Work in progress project</p>
+          <p class="mb-2"><i class="fas fa-square" style="color: red;"></i> - Unfunctional/Incomplete project</p>
+        </div>
       </div>
-      <input class="btn" type="submit" value="Submit">
-    </form>
+    </div>
+    <div class="row">
+      <div class="col-md-4 col-sm-6 col-12 mt-2 col-padding-none">
+        <div class="card border-0 rounded subtle-shadow h-100 bg-dark">
+          <img class="card-img-top" src="Images/img_UserLister.jpg" alt="">
+          <div class="bar-complete"></div>
+          <div class="card-body rounded-bottom ">
+            <h4 class="card-title text-white">User Lister</h4>
+            <p class="card-text text-white">A basic lister that adds elements based on some inputs and performs some basic validation. Created to learn basics of JavaScript.</p>
+            <a href="Pages/UserLister.html" class="btn btn-primary">View</a>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-4 col-sm-6 col-12 mt-2 col-padding-none">
+        <div class="card border-0 rounded subtle-shadow h-100 bg-dark">
+          <img class="card-img-top" src="Images/img_DOMCrashCourse.jpg" alt="">
+          <div class="bar-complete"></div>
+          <div class="card-body rounded-bottom ">
+            <h4 class="card-title text-white">DOM Manipulation Lister</h4>
+            <p class="card-text text-white">A lister that uses JavaScript to manipulate the DOM, created while learning how to interact and edit the DOM using Javascript.</p>
+            <a href="Pages/DOMCrashCourse.html" class="btn btn-primary">View</a>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-4 col-sm-6 col-12 mt-2 col-padding-none">
+        <div class="card border-0 rounded subtle-shadow h-100 bg-dark">
+          <img class="card-img-top" src="Images/img_placeholder.png" alt="">
+          <div class="bar-nonfunctional"></div>
+          <div class="card-body rounded-bottom ">
+            <h4 class="card-title text-white">Placeholder Card</h4>
+            <p class="card-text text-white">A generic placeholder card for a future project.</p>
+            <a href="Pages/DOMCrashCourse.html" class="btn btn-primary disabled">View</a>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-4 col-sm-6 col-12 mt-2 col-padding-none">
+        <div class="card border-0 rounded subtle-shadow h-100 bg-dark">
+          <img class="card-img-top" src="Images/img_placeholder.png" alt="">
+          <div class="bar-nonfunctional"></div>
+          <div class="card-body rounded-bottom ">
+            <h4 class="card-title text-white">Placeholder Card</h4>
+            <p class="card-text text-white">A generic placeholder card for a future project.</p>
+            <a href="Pages/DOMCrashCourse.html" class="btn btn-primary disabled">View</a>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-4 col-sm-6 col-12 mt-2 col-padding-none">
+        <div class="card border-0 rounded subtle-shadow h-100 bg-dark">
+          <img class="card-img-top" src="Images/img_placeholder.png" alt="">
+          <div class="bar-nonfunctional"></div>
+          <div class="card-body rounded-bottom ">
+            <h4 class="card-title text-white">Placeholder Card</h4>
+            <p class="card-text text-white">A generic placeholder card for a future project.</p>
+            <a href="Pages/DOMCrashCourse.html" class="btn btn-primary disabled">View</a>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-4 col-sm-6 col-12 mt-2 col-padding-none">
+        <div class="card border-0 rounded subtle-shadow h-100 bg-dark">
+          <img class="card-img-top" src="Images/img_placeholder.png" alt="">
+          <div class="bar-nonfunctional"></div>
+          <div class="card-body rounded-bottom ">
+            <h4 class="card-title text-white">Placeholder Card</h4>
+            <p class="card-text text-white">A generic placeholder card for a future project.</p>
+            <a href="Pages/DOMCrashCourse.html" class="btn btn-primary disabled">View</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
 
-    <ul id="users"></ul>
-
-    <!-- <ul class="items">
-        <li class="item">Item 1</li>
-        <li class="item">Item 2</li>
-        <li class="item">Item 3</li>
-      </ul> -->
-  </section>
-
-
-  <script src="Scripts/script.js"></script>
+  <footer class="mt-3 mb-2">
+    <hr class="my-2 border-secondary">
+    <div class="container">
+      <small class="text-muted">Made by Jake Hall <span class="float-right">2020</span></small>
+    </div>
+  </footer>
+  <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
+    integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj"
+    crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"
+    integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo"
+    crossorigin="anonymous"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"
+    integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI"
+    crossorigin="anonymous"></script>
 </body>
 
 </html>
